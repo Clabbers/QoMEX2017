@@ -1,0 +1,20 @@
+The tropical view directions set is two bands 8 samples offset 30 degree from
+the equator, each with a 30 degree field of view:
+
+  Yaw Pitch  Roll    FOV
+    0    30     0     30
+   45    30     0     30
+   90    30     0     30
+  135    30     0     30
+  180    30     0     30
+  225    30     0     30
+  270    30     0     30
+  315    30     0     30
+    0   -30     0     30
+   45   -30     0     30
+   90   -30     0     30
+  135   -30     0     30
+  180   -30     0     30
+  225   -30     0     30
+  270   -30     0     30
+  315   -30     0     30

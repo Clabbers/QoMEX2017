@@ -1,0 +1,50 @@
+This repository contains a paper presented at the QoMEX 2017 conference titled
+"Quantitative Evaluation of Omnidirectional Video Quality", and is provided here
+for review and further analysis. The directory hierarchy at:
+
+	QuantEvalOmnidirVideoQual/Data 
+
+contains a large collection of PSNR/SSIM data for each frame of a given video
+under varying conditions. This data was used to generate the graphs and
+analysis discussed in the paper and is provided here for review and further
+analysis.
+
+The format of the data is a .CSV file with a header line explaining the format,
+which is very simple. Here is an example of the beginning of a data file:
+
+    bytes,psnr,ssim
+    581696.0,29.971724311,0.845026741971
+    1874.0,29.9716365029,0.845026312268
+    46411.0,29.8902770322,0.841674323555
+    3533.0,29.8652043131,0.841132400651
+
+There are three columns:
+  * The first is the frame size in bytes
+  * Second is the overall YCrCb PSNR (MSE computed for all pixels in all
+    frames, then PSNR computed)
+  * Third is the average of individual frame luma SSIM
+
+The directory structure and filename describe what the data files measure.
+It's structure is as follows, it will make more sense if you have read the
+paper above.
+
+<view_directions>       (uniform, tropical, equatorial)
+  <projection>         (cubemap, eac, equirect)
+    <video_number>     (1, 2, 3, ...)
+      <resolution>     (720p, 1080p, 1440p, 2160p)
+        crf_<crf>.csv    (ffmpeg constant rate factor for encoding)
+
+So the file:
+  equatorial/cubemap/16/720/crf_21.csv
+
+contains the per frame data for:
+  * equatorial view directions
+  * cubemap projection
+  * video #16
+  * 720p
+  * ffmpeg constant rate factor of 21
+
+The view directions are specific collections of virtual headset views for
+which PSNR and SSIM are computed then aggregated. The details of each is
+included in a README at the root of each directory.
+

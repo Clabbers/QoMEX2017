@@ -1,0 +1,13 @@
+The equatorial view directions set is very simple -- nine view directions
+evenly spaced around the equator, each with a 30 degree field of view:
+
+  Yaw Pitch  Roll    FOV
+    0     0     0     30
+   40     0     0     30
+   80     0     0     30
+  120     0     0     30
+  160     0     0     30
+  200     0     0     30
+  240     0     0     30
+  280     0     0     30
+  320     0     0     30

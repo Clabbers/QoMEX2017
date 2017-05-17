@@ -1,0 +1,39 @@
+The uniform view directions set is chosen specifically to hit the interesting
+points of a cubemap: the vertices, edge centers, and face centers. For
+implemntation reasons it was convenient to have 25 directions, so the south pole
+was dropped since there is currently rarely any interesting content there.
+
+This is of course not uniform in a strong mathematical sense, but it served
+our purposes well and seemed a reasonable name. All the view directions again
+span a 30 degree field of view.
+
+For a cube, the cube vertices are further away and hence drop towards the
+horizon when viewed from the origin. The pitch associated with this is equal to
+the atan(1 / sqrt(2)), which is approximated in the table below as 35.3 degrees.
+
+  Yaw Pitch  Roll    FOV
+    0     0     0     30
+   45     0     0     30
+   90     0     0     30
+  135     0     0     30
+  180     0     0     30
+  225     0     0     30
+  270     0     0     30
+  315     0     0     30
+    0    45     0     30
+   45  35.3     0     30
+   90    45     0     30
+  135  35.3     0     30
+  180    45     0     30
+  225  35.3     0     30
+  270    45     0     30
+  315  35.3     0     30
+    0   -45     0     30
+   45 -35.3     0     30
+   90   -45     0     30
+  135 -35.3     0     30
+  180   -45     0     30
+  225 -35.3     0     30
+  270   -45     0     30
+  315 -35.3     0     30
+    0    90     0     30
